@@ -25,7 +25,7 @@ function sorter() {
 }
 sorter();
 
-// /* Exercise №2*/
+/* Exercise №2*/
 // const num = 165651;
 // const toStr = num.toString();
 // const toArr = toStr.split("");
@@ -42,11 +42,15 @@ sorter();
 
 // namd(toArr);
 
-// /* Exercise №3*/
-// const year = 209;
+/* Exercise №3*/
+const year = 209;
 
-// if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0) {
-//   console.log(`${year} is Leap year`);
-// } else {
-//   console.log(`${year} is not Leap year`);
-// }
+function findLeap() {
+  if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0) {
+    console.log(`${year} is Leap year`);
+  } else {
+    console.log(`${year} is not Leap year`);
+  }
+}
+
+findLeap();
