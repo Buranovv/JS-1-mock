@@ -73,3 +73,18 @@ function renderFn(array, parent) {
 }
 renderFn(pokemons, elCards);
 
+elCards.addEventListener("click", (evt) => {
+  if (evt.target.id === "delete-btn") {
+    const id = Number(evt.target.dataset.id);
+    const newPockemons = [];
+    for (let i = 0; i < pokemons.length; i++) {
+      const element = pokemons[i];
+      if (element.id !== id) {
+        newPockemons.push(element);
+      }
+    }
+    pokemons = newPockemons;
+    renderFn(pokemons, elCards);
+  }
+});
+renderFn(pokemons, elCards);
