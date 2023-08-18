@@ -59,10 +59,9 @@ input::placeholder {
   justify-content: center;
   gap: 30px;
 }
-#card {
-  border: 2px solid #000;
-}
 .card {
+  border: 2px solid #000 !important;
+
   &__title {
     color: #000;
     font-size: 20px;
