@@ -6,12 +6,13 @@ const elCards = getElement(".cards");
 const elSearch = getElement("#search");
 const elSearchBtn = getElement("#search-btn");
 const elForm = getElement("#form");
+const elResultNo = getElement("#noResult");
 
 function renderFn(array, parent) {
   parent.innerHTML = "";
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
-    const newCard = document.createElement("div");
+    var newCard = document.createElement("div");
     newCard.className = "card";
     newCard.style.width = "16rem";
 
@@ -92,13 +93,21 @@ renderFn(pokemons, elCards);
 elForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const newArr = [];
+
   for (let i = 0; i < pokemons.length; i++) {
     const element = pokemons[i];
-    if (element.name.toLowerCase().includes(elSearch.value.toLowerCase())) {
+    if (
+      element.name.toLowerCase().includes(elSearch.value.toLowerCase()) ||
+      element.type
+        .toString()
+        .toLowerCase()
+        .includes(elSearch.value.toLowerCase()) ||
+      element.weight.toLowerCase().includes(elSearch.value.toLowerCase()) ||
+      element.height.toLowerCase().includes(elSearch.value.toLowerCase())
+    ) {
       newArr.push(element);
     }
   }
   elForm.reset();
   renderFn(newArr, elCards);
 });
-renderFn(pokemons, elCards);
