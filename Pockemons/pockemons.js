@@ -88,3 +88,17 @@ elCards.addEventListener("click", (evt) => {
   }
 });
 renderFn(pokemons, elCards);
+
+elForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const newArr = [];
+  for (let i = 0; i < pokemons.length; i++) {
+    const element = pokemons[i];
+    if (element.name.toLowerCase().includes(elSearch.value.toLowerCase())) {
+      newArr.push(element);
+    }
+  }
+  elForm.reset();
+  renderFn(newArr, elCards);
+});
+renderFn(pokemons, elCards);
