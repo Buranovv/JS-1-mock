@@ -3,7 +3,7 @@ let pokemons = [
     id: 1,
     num: "001",
     name: "Bulbasaur",
-    img: "http://www.serebii.net/pokemongo/pokemon/001.png",
+    img: "http://www.serebii.net/pokemongo/pokemo/001.png",
     type: ["Grass", "Poison"],
     height: "0.71 m",
     weight: "6.9 kg",
